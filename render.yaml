@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: tweety-journal
+    runtime: python
+    plan: starter
+    buildCommand: pip install -e .
+    startCommand: "gunicorn --bind 0.0.0.0:$PORT --workers 1 back:app"
+    healthCheckPath: /api/health
+    disk:
+      name: tweety-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.4
+      - key: TWEETY_DB_PATH
+        value: /var/data/tweety.sqlite3
+      - key: RUN_SCHEDULER
+        value: "true"
+      - key: AGENT_INTERVAL_HOURS
+        value: "2"
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: TAVILY_API_KEY
+        sync: false
+      - key: AGENT_RUN_TOKEN
+        sync: false

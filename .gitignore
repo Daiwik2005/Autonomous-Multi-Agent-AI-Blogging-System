@@ -9,3 +9,6 @@ wheels/
 # Virtual environments
 .venv
 .env
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal

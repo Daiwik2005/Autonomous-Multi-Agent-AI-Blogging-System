@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#193c34">
+    <meta name="description" content="The Tweety autonomous AI journal.">
+    <title>Tweety Journal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="wordmark" href="/" aria-label="Tweety Journal home">
+                <span class="wordmark-icon" aria-hidden="true">t</span>
+                <span>Tweety<span class="wordmark-light"> Journal</span></span>
+            </a>
+            <div class="header-meta">
+                <span class="edition-label">INDEPENDENT AI DISPATCHES</span>
+                <span class="header-rule" aria-hidden="true"></span>
+                <span class="edition-number">VOL. 01</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-shell">
+        <section class="intro" aria-labelledby="page-title">
+            <div>
+                <p class="eyebrow">THE AUTOMATED EDITION <span id="current-date"></span></p>
+                <h1 id="page-title">Ideas in <span>good company.</span></h1>
+            </div>
+            <p class="intro-note">A living journal of research, perspectives, and the questions shaping what comes next.</p>
+        </section>
+
+        <section class="feed-toolbar" aria-label="Journal controls">
+            <div class="feed-title-wrap">
+                <p class="eyebrow">THE JOURNAL</p>
+                <h2>Latest dispatches <span id="post-count" class="count">0</span></h2>
+            </div>
+            <div class="feed-actions">
+                <label class="search-box">
+                    <span class="search-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Search dispatches</span>
+                    <input id="search-input" type="search" placeholder="Search the journal" autocomplete="off">
+                </label>
+                <button id="generate-button" class="generate-button" type="button">
+                    <span class="button-mark" aria-hidden="true">+</span>
+                    <span>Generate a story</span>
+                </button>
+            </div>
+        </section>
+
+        <div id="agent-status" class="agent-status" data-state="idle" role="status" aria-live="polite">
+            <span class="status-indicator" aria-hidden="true"></span>
+            <span id="status-message">The editorial desk is ready.</span>
+        </div>
+
+        <div class="content-grid">
+            <section id="articles" class="article-list" aria-label="Published dispatches" aria-live="polite">
+                <div class="feed-message">Loading the journal<span class="loading-mark" aria-hidden="true">...</span></div>
+            </section>
+
+            <aside class="topic-sidebar" aria-labelledby="topics-heading">
+                <div class="sidebar-heading">
+                    <p class="eyebrow">MEMORY</p>
+                    <h2 id="topics-heading">Topics explored</h2>
+                </div>
+                <p class="sidebar-note">A record of the ground already covered.</p>
+                <p id="topic-count" class="topic-total">0 topics</p>
+                <ol id="topic-list" class="topic-list">
+                    <li class="topic-placeholder">No topics yet.</li>
+                </ol>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <span>TWEETY JOURNAL</span>
+        <span>Curiosity, kept in circulation.</span>
+    </footer>
+    <script src="/static/script.js" defer></script>
+</body>
+</html>
